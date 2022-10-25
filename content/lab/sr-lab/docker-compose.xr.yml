@@ -40,7 +40,7 @@ services:
       - NET_ADMIN
     command: /bin/sh -c "ip route add 99.0.0.0/8 via 99.1.10.1 && /bin/sh"
     networks:
-      lx1-xrd-1:
+      xrd-1-lx1:
         ipv4_address: 99.1.10.10
   lx2:
     non_xr: true
@@ -139,15 +139,18 @@ networks:
     ipam:
       config:
         - subnet: 172.28.0.0/24
+          gateway: 172.28.0.254
   xrd-1-lx1:
     ipam:
       config:
         - subnet: 99.1.10.0/24
+          gateway: 99.1.10.254
     xr_interfaces:
       - xrd-1:Gi0/0/0/2
   xrd-2-lx2:
     ipam:
       config:
         - subnet: 99.2.20.0/24
+          gateway: 99.2.20.254
     xr_interfaces:
       - xrd-2:Gi0/0/0/2
