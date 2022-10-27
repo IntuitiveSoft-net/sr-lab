@@ -65,6 +65,10 @@ services:
     networks:
       xrd-1-lx1:
         ipv4_address: 99.1.10.1
+    volumes:
+      - source: ./id_rsa.bin
+        target: /xr-storage/scratch/id_rsa.bin
+        type: bind
   xrd-2:
     xr_startup_cfg: xrd-2-startup.cfg
     xr_interfaces:
