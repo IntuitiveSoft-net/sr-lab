@@ -65,10 +65,7 @@ services:
     networks:
       xrd-1-lx1:
         ipv4_address: 99.1.10.1
-    volumes:
-      - source: ./id_rsa.bin
-        target: /xr-storage/scratch/id_rsa.bin
-        type: bind
+
   xrd-2:
     xr_startup_cfg: xrd-2-startup.cfg
     xr_interfaces:
@@ -79,10 +76,7 @@ services:
     networks:
       xrd-2-lx2:
         ipv4_address: 99.2.20.2
-    volumes:
-      - source: ./id_rsa.bin
-        target: /xr-storage/scratch/id_rsa.bin
-        type: bind
+
   xrd-3:
     xr_startup_cfg: xrd-3-startup.cfg
     xr_interfaces:
@@ -91,10 +85,7 @@ services:
       - Gi0/0/0/2
       - Gi0/0/0/3
       - Mg0/RP0/CPU0/0
-    volumes:
-      - source: ./id_rsa.bin
-        target: /xr-storage/scratch/id_rsa.bin
-        type: bind
+
   xrd-4:
     xr_startup_cfg: xrd-4-startup.cfg
     xr_interfaces:
@@ -103,10 +94,7 @@ services:
       - Gi0/0/0/2
       - Gi0/0/0/3
       - Mg0/RP0/CPU0/0
-    volumes:
-      - source: ./id_rsa.bin
-        target: /xr-storage/scratch/id_rsa.bin
-        type: bind
+
   xrd-5:
     xr_startup_cfg: xrd-5-startup.cfg
     xr_interfaces:
@@ -114,10 +102,7 @@ services:
       - Gi0/0/0/1
       - Gi0/0/0/2
       - Mg0/RP0/CPU0/0
-    volumes:
-      - source: ./id_rsa.bin
-        target: /xr-storage/scratch/id_rsa.bin
-        type: bind
+
   xrd-6:
     xr_startup_cfg: xrd-6-startup.cfg
     xr_interfaces:
@@ -125,21 +110,13 @@ services:
       - Gi0/0/0/1
       - Gi0/0/0/2
       - Mg0/RP0/CPU0/0
-    volumes:
-      - source: ./id_rsa.bin
-        target: /xr-storage/scratch/id_rsa.bin
-        type: bind
+
   xrd-7:
     xr_startup_cfg: xrd-7-startup.cfg
     xr_interfaces:
       - Gi0/0/0/0
       - Gi0/0/0/1
       - Mg0/RP0/CPU0/0
-    volumes:
-      - source: ./id_rsa.bin
-        target: /xr-storage/scratch/id_rsa.bin
-        type: bind
-
 
 xr_l2networks:
   - ["xrd-1:Gi0/0/0/0", "xrd-3:Gi0/0/0/2"]
