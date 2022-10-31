@@ -81,7 +81,6 @@ services:
     xr_startup_cfg: xrd-3-startup.cfg
     xr_interfaces:
       - Gi0/0/0/0
-      - Gi0/0/0/1
       - Gi0/0/0/2
       - Gi0/0/0/3
       - Mg0/RP0/CPU0/0
@@ -99,7 +98,6 @@ services:
     xr_startup_cfg: xrd-5-startup.cfg
     xr_interfaces:
       - Gi0/0/0/0
-      - Gi0/0/0/1
       - Gi0/0/0/2
       - Mg0/RP0/CPU0/0
 
@@ -124,7 +122,6 @@ xr_l2networks:
   - ["xrd-2:Gi0/0/0/0", "xrd-4:Gi0/0/0/2"]
   - ["xrd-2:Gi0/0/0/1", "xrd-6:Gi0/0/0/2"]
   - ["xrd-3:Gi0/0/0/0", "xrd-4:Gi0/0/0/0"]
-  - ["xrd-3:Gi0/0/0/1", "xrd-5:Gi0/0/0/1"]
   - ["xrd-4:Gi0/0/0/1", "xrd-6:Gi0/0/0/1"]
   - ["xrd-5:Gi0/0/0/0", "xrd-6:Gi0/0/0/0"]
   - ["xrd-3:Gi0/0/0/3", "xrd-7:Gi0/0/0/0"]
