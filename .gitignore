@@ -1,3 +1,4 @@
 .idea
 images/.$lab-*
 images/export_images copy.sh
+.DS_Store
