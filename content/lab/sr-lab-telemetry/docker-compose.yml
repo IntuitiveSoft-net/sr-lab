@@ -7,9 +7,9 @@ services:
       context: ./telegraf
       args:
         HTTPS_PROXY: $HTTPS_PROXY
-    container_name: lrm-telegraf
+    container_name: telegraf
     ports:
-      - 57500:57500
+      - 57000:57000
     hostname: telegraf
     command: telegraf --watch-config poll --config-directory /etc/telegraf/telegraf.d
     volumes:
@@ -28,7 +28,7 @@ services:
 
   influxdb:
     image: influxdb:2.0.4-alpine
-    container_name: lrm-influxdb
+    container_name: influxdb
     ports:
       - 8086:8086
     env_file:
@@ -37,7 +37,7 @@ services:
 
   grafana:
     image: grafana/grafana:8.3.0
-    container_name: lrm-grafana
+    container_name: grafana
     ports:
       - 3000:3000
     volumes:
@@ -53,3 +53,7 @@ services:
     depends_on:
       - influxdb
     restart: always
+
+volumes:
+  grafana-data:
+    driver: local
