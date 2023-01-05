@@ -7,7 +7,7 @@ services:
     ports:
       - 57000:57000
     hostname: telegraf
-    command: telegraf --watch-config poll --config-directory /etc/telegraf/telegraf.d
+    command: telegraf --config-directory /etc/telegraf/telegraf.d
     volumes:
       - "./telegraf/telegraf-sample.conf:/etc/telegraf/telegraf.conf:ro"
       - "./telegraf/telegraf.d:/etc/telegraf/telegraf.d:ro"
