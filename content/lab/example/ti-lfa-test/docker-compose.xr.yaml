@@ -62,7 +62,7 @@ services:
       - Mg0/RP0/CPU0/0
       - Gi0/0/0/0
       - Gi0/0/0/1
- xrd5:
+  xrd5:
     container_name: xrd5
     xr_startup_cfg: xrd5_xrconf.cfg
     xr_interfaces:
