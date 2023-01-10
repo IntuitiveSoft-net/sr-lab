@@ -1,4 +1,4 @@
-zone sr-lab.com" {
+zone "sr-lab.com" {
     type master;
     file "/etc/bind/zones/db.sr-lab.com";
 };
