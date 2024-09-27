@@ -1,0 +1,22 @@
+server {
+
+    listen [::]:8443 ssl ipv6only=on;
+    listen 8443 ssl;
+
+    ssl_certificate /etc/cert/fullchain.pem;
+    ssl_certificate_key /etc/cert/privkey.pem;
+
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+	
+	location /grafana {
+	    proxy_http_version 1.1;
+	    proxy_pass http://localhost:3000;
+	}
+
+    location /influx {
+	    proxy_http_version 1.1;
+	    proxy_pass http://localhost:8086;
+	}
+
+}
