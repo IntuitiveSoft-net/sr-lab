@@ -6,3 +6,4 @@
 sudo mv /home/ubuntu/sr-lab /etc/nginx/sites-available
 sudo ln -s /etc/nginx/sites-available/sr-lab /etc/nginx/sites-enabled/sr-lab
 sudo nginx -s reload
+sudo service procps force-reload
